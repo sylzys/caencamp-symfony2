@@ -5,6 +5,11 @@ Accueil - {{ parent() }}
 {% endblock %}
 
 {% block body %}
-Hello {{ name }}!
+Hello {{ name }}!<br>
+Il y a {{ talk_list|length }} conférences planifiées
+<a href="{{ path('caencamp_add_talk') }}" class="btn btn-min btn-info">
+	<i class="icon-plus-sign"></i>
+	Ajouter une conférence
+</a>
 {% endblock %}
 

@@ -1,3 +1,6 @@
 caencamp_conf_homepage:
     pattern:  /
     defaults: { _controller: CaencampConfBundle:Default:index }
+caencamp_add_talk:
+    pattern:  /
+    defaults: { _controller: CaencampConfBundle:Talk:addTalk }
