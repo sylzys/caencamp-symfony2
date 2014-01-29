@@ -20,6 +20,7 @@ class TalkType extends AbstractType
             'empty_value' => array('year' => 'Année', 'month' => 'Mois', 'day' => 'Jour'),
             'pattern' => "{{ day }}/{{ month }}/{{ year }}",
             ))
+            ->add('speaker', new SpeakerType())
             ->add('save', 'submit', array("label" => "Enregistrer", 'attr' => array('class' => 'btn btn-primary')));
         ;
     }

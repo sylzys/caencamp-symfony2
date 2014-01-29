@@ -14,9 +14,13 @@ class TalkController extends Controller
 		$talk = new Talk();
 		$form = $this->createForm(new TalkType, $talk);
 
+		//$request = $this->get('request');
 		$request = $this->get('request');
 		if ($request->getMethod() == 'POST'){
-			$form->handleRequest($request);
+			var_dump($form->isSubmitted());
+			 $form->handleRequest($request);
+			 var_dump($form->isSubmitted());
+			 var_dump($form->getErrorsAsString());
 			if ($form->isValid()){
 				$em->persist($talk);
 				$em->flush();

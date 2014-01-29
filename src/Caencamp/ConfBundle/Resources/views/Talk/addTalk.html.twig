@@ -5,12 +5,27 @@ Ajouter une conférence - {{ parent() }}
 {% endblock %}
 
 {% block body %}
+	<div class="row-fluid">
+			<form class="form-horizontal" method="post" {{ form_enctype(form) }}>
 
-<div class="well">
-	<form class="form-horizontal" method="post" {{ form_enctype(form) }}
-
-	{{ form_errors(form) }}
-	{{ form_widget(form) }}
-</form>
-</div>
+			<div class="span6">
+				{{ form_label(form.title) }}
+				{{ form_errors(form.title) }}
+				{{ form_widget(form.title) }}
+				{{ form_label(form.date) }}
+				{{ form_errors(form.date) }}
+				{{ form_widget(form.date) }}
+			</div>
+			<div class="span6">
+				{{ form_label(form.speaker.lastname) }}
+				{{ form_errors(form.speaker.lastname) }}
+				{{ form_widget(form.speaker.lastname) }}
+				{{ form_label(form.speaker.firstname) }}
+				{{ form_errors(form.speaker.firstname) }}
+				{{ form_widget(form.speaker.firstname) }}
+			</div>
+			{{ form_widget(form._token) }}
+			{{ form_widget(form.save) }}
+		</form>
+	</div>
 {% endblock %}

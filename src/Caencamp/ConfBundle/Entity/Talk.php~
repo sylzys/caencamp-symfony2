@@ -95,27 +95,4 @@ class Talk
     {
         return $this->date;
     }
-
-    /**
-     * Set speaker
-     *
-     * @param \Caencamp\ConfBundle\Entity\Speaker $speaker
-     * @return Talk
-     */
-    public function setSpeaker(\Caencamp\ConfBundle\Entity\Speaker $speaker = null)
-    {
-        $this->speaker = $speaker;
-    
-        return $this;
-    }
-
-    /**
-     * Get speaker
-     *
-     * @return \Caencamp\ConfBundle\Entity\Speaker 
-     */
-    public function getSpeaker()
-    {
-        return $this->speaker;
-    }
 }
