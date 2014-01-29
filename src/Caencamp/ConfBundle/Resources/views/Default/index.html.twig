@@ -9,7 +9,11 @@ Hello {{ name }}!<br>
 Il y a {{ talk_list|length }} conférence(s) planifiée(s)<br>
 <ul>
 {% for talk in talk_list %}
-	<li>{{ talk.title ~ " (" ~ talk.date|date('d/m/Y') ~ ")" }} - <a href="{{ path('caencamp_modify_talk', { "id" : talk.id }) }}" class="btn btn-mini btn-info">
+	<li>{{ talk.title ~ " (" ~ talk.date|date('d/m/Y')}}
+		{% if talk.speaker is not null %}
+		par {{ talk.speaker.firstname }}
+		{% endif %}
+		) - <a href="{{ path('caencamp_modify_talk', { "id" : talk.id }) }}" class="btn btn-mini btn-info">
 	<i class="icon-eye-open"></i></a></li></li>
 {% endfor %}
 </ul><br>
