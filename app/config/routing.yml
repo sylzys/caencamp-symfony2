@@ -1,0 +1,4 @@
+caencamp_conf:
+    resource: "@CaencampConfBundle/Resources/config/routing.yml"
+    prefix:   /
+

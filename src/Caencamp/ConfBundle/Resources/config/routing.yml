@@ -1,0 +1,3 @@
+caencamp_conf_homepage:
+    pattern:  /
+    defaults: { _controller: CaencampConfBundle:Default:index }

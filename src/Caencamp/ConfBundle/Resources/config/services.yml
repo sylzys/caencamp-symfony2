@@ -1,0 +1,7 @@
+parameters:
+#    caencamp_conf.example.class: Caencamp\ConfBundle\Example
+
+services:
+#    caencamp_conf.example:
+#        class: %caencamp_conf.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
