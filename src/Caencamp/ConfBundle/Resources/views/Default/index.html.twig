@@ -6,7 +6,13 @@ Accueil - {{ parent() }}
 
 {% block body %}
 Hello {{ name }}!<br>
-Il y a {{ talk_list|length }} conférences planifiées
+Il y a {{ talk_list|length }} conférence(s) planifiée(s)<br>
+<ul>
+{% for talk in talk_list %}
+	<li>{{ talk.title ~ " (" ~ talk.date|date('d/m/Y') ~ ")" }} - <a href="{{ path('caencamp_modify_talk', { "id" : talk.id }) }}" class="btn btn-mini btn-info">
+	<i class="icon-eye-open"></i></a></li></li>
+{% endfor %}
+</ul><br>
 <a href="{{ path('caencamp_add_talk') }}" class="btn btn-min btn-info">
 	<i class="icon-plus-sign"></i>
 	Ajouter une conférence
